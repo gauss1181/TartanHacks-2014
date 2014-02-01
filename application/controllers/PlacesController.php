@@ -12,6 +12,10 @@ class PlacesController extends Zend_Controller_Action {
 
         $string = $this->getRequest()->getParam('string');
 
-        
+        $dbPlaces = new Application_Model_DbTable_Places();
+
+        $ret = $dbPlaces->getPlacesContainingStr($string);
+
+        echo Zend_Json::encode($ret->toArray());
     }
 }
