@@ -1,0 +1,224 @@
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                     <i class="fa fa-briefcase"></i> <span class="light">tour</span>geni.us <i class="fa fa-plane"></i> 
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="login.php">My Saved Tours</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Holiday &#8800; Hellday</h1>
+                        <h2>Plan your next vacation <br/> in 30 seconds. <h2><br/> <br/>
+                        <div class="page-scroll">
+                            <a href="#step-1" class="btn btn-circle-black">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+							<p><h4>Get Started! <br/> <br/> It's <u>Easy</u> and <u>Free</u>.</h4></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="step-1" class="content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				
+                <h2>We are gonna plan you an <br/><u>awesome</u> tour.</h2><br/>
+                <p><h4>Bur first, Tell us where you are visiting!</h4></p>
+                <p><input type='text' id='typeahead' class='typeahead chromeless input-text centered' data-provide="typeahead" data-items="10" size="35"/><p>
+				<div class="page-scroll">
+					<a href="#step-2" class="btn btn-circle">
+						<i class="fa fa-angle-double-down animated"></i>
+					</a>
+					<br/><br/>
+					<p><h4>Next Step: Dates</h4></p>
+				</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="step-2" class="content-section text-center">
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+					<!--
+					<div class="page-scroll">
+						<p><h4>Change Destination</h4></p>
+						<a href="#step-1" class="btn btn-circle">
+							<i class="fa fa-angle-double-up animated"></i>
+						</a>
+					</div>
+					-->
+					<br/><br/><br/>
+                    <h2><div class="destToGo"></div> Sounds good!</h2>
+                    <p><h4>Cool. Now when would you be travelling there?</h4></p>
+					
+					<table class="table">
+						<thead>
+						  <tr>
+							<th><h5><label>Arriving:</label><input type="text" class="span2 form-control" value="" id="dpd1" ></h5></th>
+							<th><h5><label>Leaving:</label><input type="text" class="span2 form-control" value="" id="dpd2"></h5></th>
+						  </tr>
+						</thead>
+					</table>
+						
+					
+					
+					<br/><br/>
+					<div class="page-scroll">
+					<a href="#step-3" class="btn btn-circle">
+						<i class="fa fa-angle-double-down animated"></i>
+					</a>
+					<br/><br/>
+					<p><h4>Next Step: Budget</h4></p>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<section id="step-3" class="content-section text-center">
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+					<!--
+					<div class="page-scroll">
+						<p>Change Dates</p>
+						<a href="#step-2" class="btn btn-circle">
+							<i class="fa fa-angle-double-up animated"></i>
+						</a>
+					</div>
+					-->
+				<br/><br/><br/><br/>
+                    <h2>Last Step Already?</h2>
+                    <p><h4>Tell us your budget and we'll try to work within it.</h4></p><br/><br/>
+					<p><h4>$<input type="text" id="budget" class='chromeless input-text centered' size="8"> for the whole trip</h4></p>
+					<br/><br/><br/>
+                    <p><a href="#step-3" id="buildtour" class="btn btn-default btn-lg">I'm Done! Plan My Tour!</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            
+        </div>
+    </section>
+
+    <!--<div id="map"></div>-->
+
+	
+    <!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+	<script src="js/lib/typeahead.js"></script>
+    <script src="js/lib/grayscale.js"></script>
+	<script src="js/lib/bootstrap-datepicker.js"></script>
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+		$(".btn-circle-black").click( function() {
+		  setTimeout(function(){
+			$(".navbar-custom a").css("color", "#fff");}, 950);
+		});
+    });
+	</script>
+	<script>
+	$('#typeahead').typeahead({
+    source: function (term, process) {
+        return $.getJSON(
+            'http://www.tripomatic.com/autocomplete.php',
+            { term: term },
+			
+            function (data) {
+                var newData = [];
+				$.each(data, function(){
+				newData.push(this.label);
+				});
+				return process(newData);
+            }
+			);
+		},
+	
+	updater: function(item) {
+		var pattern = /, /;
+		var fld = pattern.test(item);
+		if (fld) {
+			var $fld = item.substr(0,item.indexOf(','))
+		} else {
+		var $fld = item
+		}
+		$('.destToGo').html($fld+"!");
+        return item;
+    }});
+    </script>
+	<script type="text/javascript">
+	    var nowTemp = new Date();
+		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+		 
+		var checkin = $('#dpd1').datepicker({
+		  onRender: function(date) {
+			return date.valueOf() < now.valueOf() ? 'disabled' : '';
+		  }
+		}).on('changeDate', function(ev) {
+		  if (ev.date.valueOf() > checkout.date.valueOf()) {
+			var newDate = new Date(ev.date)
+			newDate.setDate(newDate.getDate() + 1);
+			checkout.setValue(newDate);
+		  }
+		  checkin.hide();
+		  $('#dpd2')[0].focus();
+		}).data('datepicker');
+		var checkout = $('#dpd2').datepicker({
+		  onRender: function(date) {
+			return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+		  }
+		}).on('changeDate', function(ev) {
+		  checkout.hide();
+		}).data('datepicker');
+	</script>
+	
+	<script>
+	$("#buildtour").click(function(){
+  $.post("http://www.w3schools.com/jquery/demo_test_post.asp",
+  {
+    name:"Donald Duck",
+    budget:"Duckburg"
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+});
+	</script>
+	
+
+</body>
