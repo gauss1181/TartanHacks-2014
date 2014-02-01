@@ -29,4 +29,11 @@ class Application_Model_DbTable_Places extends Zend_Db_Table_Abstract {
         $this->update($data, "id = $status");
     }
 
+    public function getPlacesByCategory($category) {
+        $row = $this->fetchRow("id = '$category'");
+        $places = $row->contains;
+        $places = explode(",", $places);
+        return $places;
+    }
+
 }
