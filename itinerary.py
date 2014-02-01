@@ -25,7 +25,7 @@ def main():
         places += [category[i][:10]]
     # pick 3 meal locations, and 3 activity locations based on budget
     meals = ["meals1", "meals2", "meals3"] # sorry don't mind the crappy style of this very pseudo pseudocode
-    activities = ["activities1", "activities2", "activities3"]
+    activities = ["activities1", "activities2", "activities3"] 
     # budget total can end up having a +/- 10% price margin
     # now to figure out what order and what times everything should happen
     # in the itinerary
