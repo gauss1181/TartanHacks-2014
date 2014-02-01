@@ -13,7 +13,12 @@ class Application_Model_DbTable_Places extends Zend_Db_Table_Abstract {
     }
     
     public function getPlacesContainingStr($str) {
-        $rows = $this->fetchAll("name LIKE '%$str%'");
+        $rows = $this->fetchAll("name LIKE '%$str%' AND type = 'place'");
+        return $rows;
+    }
+
+    public function getCategories() {
+        $rows = $this->fetchAll("type = 'category'");
         return $rows;
     }
 

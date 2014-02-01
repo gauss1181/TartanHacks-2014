@@ -14,8 +14,38 @@ class PlacesController extends Zend_Controller_Action {
 
         $dbPlaces = new Application_Model_DbTable_Places();
 
-        $ret = $dbPlaces->getPlacesContainingStr($string);
+        $ret = $dbPlaces->getPlacesContainingStr($string)->toArray();
 
-        echo Zend_Json::encode($ret->toArray());
+        array_walk($ret, function (&$n) {
+            unset($n['type']);
+            unset($n['contains']);
+
+        });
+
+        echo Zend_Json::encode($ret);
+    }
+
+    /**
+     * Get all categories
+     */
+    public function getcategoriesAction() {
+        $this->_helper->layout()->disableLayout(); /* Disable the layout file */
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $dbPlaces = new Application_Model_DbTable_Places();
+
+        $ret = $dbPlaces->getCategories()->toArray();
+
+        array_walk($ret, function(&$n) { 
+            unset($n['avg_cost']);
+            unset($n['avg_rating']);
+            unset($n['close_time']);
+            unset($n['open_time']);
+            unset($n['address']);
+            unset($n['type']);
+            unset($n['avg_stay_time']);
+        });
+
+        echo Zend_Json::encode($ret);
     }
 }
