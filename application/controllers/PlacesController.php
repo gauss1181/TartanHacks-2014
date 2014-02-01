@@ -58,6 +58,26 @@ class PlacesController extends Zend_Controller_Action {
 
         $budget = $this->getRequest()->getParam('budget');
         $tags = $this->getRequest()->getParam('tags'); /* IDs of categories separated by , */
-        
+
+        $ret = array(
+            array(
+                'id' => 1,
+                'name' => "Metropolitan Museum",
+                'start_time' => "01/02/2014 07:00:00",
+                'end_time' => "01/02/2014 12:00:00",
+                'address' => "New York City, NY"
+            ),
+
+            array(
+                'id' => 2,
+                'name' => "Peiking Duck Restaurant",
+                'start_time' => "01/02/2014 12:30:00",
+                'end_time' => "01/02/2014 13:30:00",
+                'address' => "The Empire State Building"
+            )
+        );
+
+        echo Zend_Json::encode($ret);
+
     }
 }
