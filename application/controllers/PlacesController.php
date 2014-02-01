@@ -29,7 +29,7 @@ class PlacesController extends Zend_Controller_Action {
      * Get all categories
      */
     public function getcategoriesAction() {
-        $this->_helper->layout()->disableLayout(); /* Disable the layout file */
+        $this->_helper->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
 
         $dbPlaces = new Application_Model_DbTable_Places();
@@ -47,5 +47,17 @@ class PlacesController extends Zend_Controller_Action {
         });
 
         echo Zend_Json::encode($ret);
+    }
+
+    public function getItinAction() {
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $arrival = $this->getRequest()->getParam('arrival');
+        $leaving = $this->getRequest()->getParam('leaving');
+
+        $budget = $this->getRequest()->getParam('budget');
+        $tags = $this->getRequest()->getParam('tags'); /* IDs of categories separated by , */
+        
     }
 }
